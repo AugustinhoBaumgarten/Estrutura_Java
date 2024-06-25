@@ -7,7 +7,18 @@ public class ListaEncadeada<T> {
 	public ListaEncadeada() {
 		this.referenciaEntrada = null;
 	}
+	public void add(T conteudo) {
+		No<T>  novoNo = new<>(conteudo);
+		if(this.isEmpty()) {
+			referenciaEntrada = novoNo;
+			return;
+		}
+		No<T> noAuxiliar = referenciaEntrada;
+		for (int i =0; i < this.size()-1; i++)
+			noAuxiliar = noAuxiliar.getProximoNo();
+	}
 	
+<<<<<<< HEAD
 	private No<T> getNo(int index){
 		
 		validaIndice(index);
@@ -27,6 +38,9 @@ public class ListaEncadeada<T> {
 		return noRetorno;
 	}
 	
+=======
+	noAuxiliar.setProximoNo(novoNo);
+>>>>>>> d7f2054a4f7137e88e8b98d24a706dc9c3bddae5
 	public int size(){
 		int tamanhoLista = 0;
 		
